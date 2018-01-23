@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div class="arrow_box"></div>
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
@@ -30,14 +31,35 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #app {
+  background: #fff;
+  margin-top: 1rem;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.arrow_box {
+  position: relative;
+  background: #fff;
+}
+
+.arrow_box:after {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #fff;
+  border-width: 12px;
+  margin-left: -12px;
 }
 
 h1, h2 {
